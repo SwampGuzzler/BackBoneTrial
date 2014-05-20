@@ -11,18 +11,20 @@
 define([
   "jquery",
   "backbone",
+  "app/models/employee",
 
   // Import and compile a HBS template.
   // For real application, remove this import (and the real file) and replace
   // with imports for your Backbone components needed to bootstrap the full
   // application. Likely this means a collection and router.
-  "hbs!app/templates/employee",
+  "hbs!app/templates/employee", // --> THIS  '!' after hbs lets me know that hbs is a plug-in!
 
   // Polyfill JSON for old browsers.
   "json2"
 ], function (
   $,
   Backbone,
+  EmployeeModel,
   employeeTmpl
 ) {
   "use strict";
@@ -37,13 +39,14 @@ define([
   //
   // The model contains the data. Typically this is sync'ed with remote or
   // local storage.
+  /*
   var EmployeeModel = Backbone.Model.extend({
     defaults: {
       firstName: "",
       lastName: "",
       position: ""
     }
-  });
+  });*/
 
   //New View!
   var EmployeeView = Backbone.View.extend({
